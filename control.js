@@ -6,18 +6,20 @@ const navSlide = () => {
   const navLinks  = document.querySelectorAll('.nav-links li')
 
     burger.addEventListener('click', () => {
-      // burger toggle
+      // burger toggle: happen when click on toggle
       nav.classList.toggle('nav-active');
-
-      //animation links
+      //animation links: how to each link show up
       navLinks.forEach((link, index) => {
         if(link.style.animation) {
-          link.style.animation = '';
+          link.style.animation = ``;
         }
         else {
-          link.style.animation = 'navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s';
+          link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
         }
+        console.log(index / 7);
       });
+      //burger animation: change burger to X mark
+      burger.classList.toggle('toggle');
     });
 }
 
